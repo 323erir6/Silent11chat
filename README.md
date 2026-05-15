@@ -1,2 +1,1 @@
-# Silent11chat
-AI Assistant
+pip install g4f
