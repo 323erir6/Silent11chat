@@ -88,7 +88,7 @@ def create_app():
     if MSG_FONT_NAME in available_fonts:
         chosen_font = (MSG_FONT_NAME, MSG_FONT_SIZE)
     else:
-        chosen_font = ("Consolas", MSG_FONT_SIZE)
+        chosen_font = ("Noto Sans", MSG_FONT_SIZE)
     # Conversation history kept in-memory for this session only
     conversation_history = []
     # loading indicator for AI responses (three animated dots)
