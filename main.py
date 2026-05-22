@@ -8,7 +8,6 @@ except Exception:
     ctk = None
     USING_CTK = False
 import g4f
-
 # message font and colors
 MSG_FONT_NAME = "Rubik"
 MSG_FONT_SIZE = 14
@@ -493,6 +492,7 @@ def create_app():
         input_frame.grid_columnconfigure(0, weight=1)
         entry = ctk.CTkEntry(input_frame)
         entry.grid(row=0, column=0, sticky='ew', padx=(0, 6))
+        entry.focus_set()
         send_btn = ctk.CTkButton(input_frame, text='Send', width=70)
         send_btn.grid(row=0, column=1)
         trans_btn = ctk.CTkButton(input_frame, text='☰', width=30, command=toggle_transparency_window)
@@ -634,9 +634,6 @@ def create_app():
     except Exception:
         send_btn.config(command=send)
     entry.bind('<Return>', lambda e: send())
-    # also bind Enter on root so it works regardless of focus
-    root.bind('<Return>', lambda e: send())
-    # Do NOT use root.bind for global toggle; a global hotkey listener is used instead
 
     # expose toggle function so external/global hooks can call it
     try:
